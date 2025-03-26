@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.4</version>
+		<relativePath/>
+	</parent>
+
+	<!-- Datos que heredaran los hijos -->
+	<groupId>com.api</groupId>
+	<artifactId>eventify-api</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>eventify-api</name>
+	<description>API de Gestión de Eventos y Reservas</description>
+	<packaging>pom</packaging>
+
+	<!-- Agrega los servicios hijos como module -->
+	<modules>
+		<!-- Servicios de Configuración -->
+		<module>gateway-service</module>
+		<module>eureka-server</module>
+		<module>config-service</module>
+		<!-- Servicios de Principales -->
+		<module>eventos-service</module>
+		<module>notificaciones-service</module>
+		<module>pagos-service</module>
+		<module>reservas-service</module>
+		<module>usuarios-service</module>
+	</modules>
+
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+
+	<!-- Dependencias Global -->
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>3.4.4</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

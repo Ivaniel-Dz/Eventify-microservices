@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway-svc
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: eventos
+          uri: 'http://localhost:8081'
+          predicates:
+            - Path=/api/eventos/**
+        - id: usuarios
+          uri: 'http://localhost:8082'
+          predicates:
+            - Path=/api/usuarios/**
+        - id: reservas
+          uri: 'http://localhost:8083'
+          predicates:
+            - Path=/api/reservas/**
+        - id: pagos
+          uri: 'http://localhost:8084'
+          predicates:
+            - Path=/api/pagos/**
+        - id: notificaciones
+          uri: 'http://localhost:8085'
+          predicates:
+            - Path=/api/notificaciones/**
+
+eureka:
+  client:
+    register-with-eureka: false
