@@ -13,11 +13,12 @@ spring:
         - id: eventos
           uri: 'http://localhost:8081'
           predicates:
-            - Path=/api/eventos/**
+            - Path=/eventos/**
         - id: usuarios
           uri: 'http://localhost:8082'
           predicates:
-            - Path=/api/usuarios/**
+            - Path=/auth/**
+            - Path=/dashboard/**
         - id: reservas
           uri: 'http://localhost:8083'
           predicates:
