@@ -30,9 +30,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false) // LAZY: solo cargarlo cuando sea necesario
     @JoinColumn(name = "role_id", nullable = false)
-     private Role role;
+    private Role role;
 
     public User(String username, String email, String password, Role role) {
         this.username = username;
