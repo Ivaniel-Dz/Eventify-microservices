@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // Genera un constructor sin argumentos.
 @AllArgsConstructor // Genera un constructor con todos los campos de la clase como argumentos.
 public class RegisterDto {
-    private String userName;
+    private String username;
     private String email;
     private String password;
 }
