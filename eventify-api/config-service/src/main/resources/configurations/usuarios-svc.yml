@@ -19,6 +19,11 @@ spring:
       hibernate:
         format_sql: true
 
+# Configuration de Seguridad y JWT
+jwt:
+  secretKey: 769eceb60d6cb066f7871a8d85c35a32dd67613a694dfd88dfed99e7303b5f8f
+  expiration: 3600  # Tiempo en segundos (1 hora)
+
 eureka:
   instance:
     hostname: localhost
